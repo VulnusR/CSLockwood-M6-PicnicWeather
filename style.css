@@ -1,0 +1,31 @@
+
+
+header {
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    border-bottom: 5px solid;
+    border-color: black;
+    margin-bottom: 2%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: orangered;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+  }
+  
+ 
+
+
+
