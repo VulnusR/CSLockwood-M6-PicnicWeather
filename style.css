@@ -91,6 +91,31 @@ main {
     height: 35%;
     background-color: aqua;
     margin-top: 2.5%;
+    
+}
+
+#mainforecastheaderparent {
+
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+#cityname {
+    display: flex;
+    align-self: Left;
+
+
+}
+
+#headerimg {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: red;
+    display: flex;
+    align-self: right;
 }
 
 #dayboxparent {
