@@ -42,8 +42,10 @@ searchBtn.addEventListener('click', function(event) {
             headerIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
             dateToday.innerHTML = new Date().toLocaleDateString();
 
-            savedCities.push(city);
-            createButtons();
+            if (!savedCities.includes(city)) {
+                savedCities.push(city);
+                createButtons();
+              }
         })
 
         .catch(function(error) {
