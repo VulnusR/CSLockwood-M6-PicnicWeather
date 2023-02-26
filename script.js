@@ -8,6 +8,8 @@ var tempElm = document.getElementById('templevel');
 var humidElm = document.getElementById('humiditylevel');
 var windElm = document.getElementById('windspeed');
 var headerIcon = document.getElementById("headerimg");
+var dateToday = document.getElementById("datetoday");
+
 
 
 
@@ -35,6 +37,7 @@ searchBtn.addEventListener('click', function(event) {
             humidElm.innerHTML = `Humidity: ${humidity}%`;
             windElm.innerHTML = `Wind Speed: ${windSpeed}m/s`;
             headerIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+            dateToday.innerHTML = new Date().toLocaleDateString();
         })
         .catch(function(error) {
             cityName.innerHTML = "Error:";
