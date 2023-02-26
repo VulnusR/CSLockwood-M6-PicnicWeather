@@ -10,10 +10,9 @@ var windElm = document.getElementById('windspeed');
 
 
 
-//calls weather data to main card on click event
+//calls weather data to main card on click
 searchBtn.addEventListener('click', function(event) {
     
-
     var city = searchTextInput.value;
     var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
@@ -28,12 +27,17 @@ searchBtn.addEventListener('click', function(event) {
             var humidity = data.main.humidity;
             var windSpeed = data.wind.speed;
 
+            if (!city || !temperature || !humidity || !windSpeed) {
+                console.error("Error: Could not retrieve weather data.");
+                return;
+            }
+            
             // Update the HTML elements with the data
             cityName.innerHTML = city;
             tempElm.innerHTML = `Temperature: ${temperature}°C`;
             humidElm.innerHTML = `Humidity: ${humidity}%`;
             windElm.innerHTML = `Wind Speed: ${windSpeed}m/s`;
         })
-       
+        
 });
 
