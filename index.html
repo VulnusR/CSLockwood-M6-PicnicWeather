@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Weather Dashboard</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Picnic Weather</h1>
+        </header>
+
+        <main>
+            <section id="maincontentparent">
+                <aside id="sidebarparent">
+                    <h2 id="sidebarh2">Search:</h2>
+                    <input type="text" id="searchbar">
+                    <button id="searchbtn">Search Now</button>
+                    <section id="searchlist">
+                        <div class="historybox"></div>
+                    </section>
+                </aside>
+            
+                <section id="weatherparent">
+                    <section id="dailyforecastparent">
+                        <div id = "mainforecastheaderparent">
+                            <h2 id="cityname" class="mainforecasttitle">Enter A city to see today's forecast!</h2>
+                            <img id="headerimg" class="weathericon"> 
+                        </div>
+                        <div id="forecastdataparent">
+                            <em id="datetoday" class="main-card"></em>
+                            <p id = "templevel" class="main-card"></p>
+                            <p id = "humiditylevel" class="main-card"></p>
+                            <p id = "windspeed" class="main-card"></p>
+                        </div>
+                    </section>
+                    <h2 id="fivedayforecasth2"></h2>
+                    <section id="dayboxparent"> 
+                        <div id="day1" class="daybox"></div>
+                        <div id="day2" class="daybox"></div>
+                        <div id="day3" class="daybox"></div>
+                        <div id="day4" class="daybox"></div>
+                        <div id="day5" class="daybox"></div>
+                    </section>
+                </section>
+            </section>
+        </main>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
