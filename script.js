@@ -83,15 +83,51 @@ function createButtons() {
     }
 }
 
-// 5 day forecast function
-
+//forecast Data
 function displayForecast(city) {
     var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
     fetch(forecastUrl)
         .then(function(response) {
+            
             if (!response.ok) {
                 throw new Error(response.statusText);
             }
             return response.json();
-        })
+    })
+
+
+
+
+    .then(function(forecastData) {
+        var forecastList = forecastData.list.slice(0,5);
+        console.log(forecastData)
+        // Loop through the next 5 days
+        for (var i = 0; i < 5; i++) {
+            var day = forecastList[i];
+
+             // Get the date of the current day
+            var date = new Date(day.dt * 1000).toLocaleDateString();
+            console.log(date)
+
+            //Get the temperature, humidity, and wind speed for the current day
+            var temperature = day.main.temp;
+            var humidity = day.main.humidity;
+            var windSpeed = day.wind.speed;
+
+            // Get the weather icon for the current day
+            var weatherIcon = day.weather[0].icon;
+
+            // Get the container for the current day
+            var dayContainer = document.getElementById(`day${i + 1}`);
+
+            // Update the content of the container for the current day
+            dayContainer.innerHTML = `
+                <p>${date}</p>
+                <p>Temperature: ${temperature}°C</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Wind Speed: ${windSpeed}m/s</p>
+                <img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png">
+            `;
+        }
+    })
 }
