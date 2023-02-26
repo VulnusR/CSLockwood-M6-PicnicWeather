@@ -98,13 +98,15 @@ main {
 
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     
 
 }
 
 #cityname {
     display: flex;
-    align-self: Left;
+    align-self: flex-start;
+    margin-left: 10px;
 
 
 }
@@ -115,7 +117,13 @@ main {
     background-color: red;
     color: red;
     display: flex;
-    align-self: right;
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+#forecastdataparent {
+
+    margin-left: 10px;
 }
 
 #dayboxparent {
