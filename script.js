@@ -34,7 +34,9 @@ searchBtn.addEventListener('click', function(event) {
             windElm.innerHTML = `Wind Speed: ${windSpeed}m/s`;
         })
         .catch(function(error) {
-            cityName.innerHTML = "Error: Please Enter a Valid City Name ";
+            cityName.innerHTML = "Error:";
+            tempElm.innerHTML = "Enter a valid city name"
+            windElm.innerHTML = "Please check your spelling and try again."
         });
 });
 
