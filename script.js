@@ -44,7 +44,9 @@ searchBtn.addEventListener('click', function(event) {
 
             if (!savedCities.includes(city)) {
                 savedCities.push(city);
+                if (savedCities.length > 0) {
                 createButtons();
+                }
               }
         })
 
@@ -59,17 +61,24 @@ searchBtn.addEventListener('click', function(event) {
 
 //creates buttons in side bar after search
 function createButtons() {
+    
+
+    if (savedCities.length === 0) {
+        return;
+    }
+
     var historyBox = document.querySelector('.historybox');
     historyBox.innerHTML = '';
+    
 
     for (var i = 0; i < savedCities.length; i++) {
-        var btn = document.createElement('button');
-        btn.innerHTML = savedCities[i];
-        btn.classList.add('historybtn');
-        btn.addEventListener('click', function() {
+        var newBtn = document.createElement('button');
+        newBtn.innerHTML = savedCities[i];
+        newBtn.classList.add('historybtn');
+        newBtn.addEventListener('click', function() {
             searchTextInput.value = this.innerHTML;
             searchBtn.click();
         });
-        historyBox.appendChild(btn);
+        historyBox.appendChild(newBtn);
     }
 }

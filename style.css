@@ -76,6 +76,7 @@ main {
     width: 80%;
     background-color: blue;
     margin-top: 15px;
+    display: hidden;
     display: flex;
     
     align-items: center;
@@ -84,6 +85,7 @@ main {
     border-radius: 30%;
 
 }
+
 
 #weatherparent { 
     display: flex;
