@@ -63,15 +63,24 @@ main {
 }
 
 .historybox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.historybtn {
     height: 75px;
     width: 80%;
     background-color: blue;
     margin-top: 15px;
     display: flex;
+    
     align-items: center;
     justify-content: center;
     font-weight: 700;
     border-radius: 30%;
+
 }
 
 #weatherparent { 

@@ -10,6 +10,8 @@ var windElm = document.getElementById('windspeed');
 var headerIcon = document.getElementById("headerimg");
 var dateToday = document.getElementById("datetoday");
 
+var savedCities = [];
+
 
 
 
@@ -25,6 +27,7 @@ searchBtn.addEventListener('click', function(event) {
             }
             return response.json();
         })
+
         .then(function(data) {
             var city = data.name;
             var temperature = data.main.temp;
@@ -38,7 +41,11 @@ searchBtn.addEventListener('click', function(event) {
             windElm.innerHTML = `Wind Speed: ${windSpeed}m/s`;
             headerIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
             dateToday.innerHTML = new Date().toLocaleDateString();
+
+            savedCities.push(city);
+            createButtons();
         })
+
         .catch(function(error) {
             cityName.innerHTML = "Error:";
             tempElm.innerHTML = "Enter a valid city name."
@@ -47,3 +54,20 @@ searchBtn.addEventListener('click', function(event) {
         });
 });
 
+
+//creates buttons in side bar after search
+function createButtons() {
+    var historyBox = document.querySelector('.historybox');
+    historyBox.innerHTML = '';
+
+    for (var i = 0; i < savedCities.length; i++) {
+        var btn = document.createElement('button');
+        btn.innerHTML = savedCities[i];
+        btn.classList.add('historybtn');
+        btn.addEventListener('click', function() {
+            searchTextInput.value = this.innerHTML;
+            searchBtn.click();
+        });
+        historyBox.appendChild(btn);
+    }
+}
