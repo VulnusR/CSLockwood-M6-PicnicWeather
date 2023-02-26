@@ -48,6 +48,8 @@ searchBtn.addEventListener('click', function(event) {
                 createButtons();
                 }
               }
+
+            displayForecast(city);
         })
 
         .catch(function(error) {
@@ -94,9 +96,6 @@ function displayForecast(city) {
             }
             return response.json();
     })
-
-
-
 
     .then(function(forecastData) {
         var forecastList = forecastData.list.slice(0,5);
