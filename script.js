@@ -9,6 +9,7 @@ var humidElm = document.getElementById('humiditylevel');
 var windElm = document.getElementById('windspeed');
 var headerIcon = document.getElementById("headerimg");
 var dateToday = document.getElementById("datetoday");
+var fiveDayTxt =document.getElementById('fivedayforecasth2')
 
 var savedCities = [];
 
@@ -41,6 +42,7 @@ searchBtn.addEventListener('click', function(event) {
             windElm.innerHTML = `Wind Speed: ${windSpeed}m/s`;
             headerIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
             dateToday.innerHTML = new Date().toLocaleDateString();
+            fiveDayTxt.innerHTML = "5 Day Forecast: "
 
             if (!savedCities.includes(city)) {
                 savedCities.push(city);
@@ -123,7 +125,7 @@ function displayForecast(city) {
 
             // Update the content of the container for the current day
             dayContainer.innerHTML = `
-                <p>${date}</p>
+                <h3>${date}</h3>
                 <p>Temperature: ${temperature}°C</p>
                 <p>Humidity: ${humidity}%</p>
                 <p>Wind Speed: ${windSpeed}m/s</p>
