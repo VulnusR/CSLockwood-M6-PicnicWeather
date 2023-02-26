@@ -7,6 +7,7 @@ var cityName = document.getElementById('cityname');
 var tempElm = document.getElementById('templevel');
 var humidElm = document.getElementById('humiditylevel');
 var windElm = document.getElementById('windspeed');
+var headerIcon = document.getElementById("headerimg");
 
 
 
@@ -27,11 +28,13 @@ searchBtn.addEventListener('click', function(event) {
             var temperature = data.main.temp;
             var humidity = data.main.humidity;
             var windSpeed = data.wind.speed;
+            var weatherIcon = data.weather[0].icon;
 
             cityName.innerHTML = city;
             tempElm.innerHTML = `Temperature: ${temperature}°C`;
             humidElm.innerHTML = `Humidity: ${humidity}%`;
             windElm.innerHTML = `Wind Speed: ${windSpeed}m/s`;
+            headerIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
         })
         .catch(function(error) {
             cityName.innerHTML = "Error:";
