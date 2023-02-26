@@ -82,3 +82,16 @@ function createButtons() {
         historyBox.appendChild(newBtn);
     }
 }
+
+// 5 day forecast function
+
+function displayForecast(city) {
+    var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+    fetch(forecastUrl)
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+}
