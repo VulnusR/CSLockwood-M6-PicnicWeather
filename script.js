@@ -35,7 +35,8 @@ searchBtn.addEventListener('click', function(event) {
         })
         .catch(function(error) {
             cityName.innerHTML = "Error:";
-            tempElm.innerHTML = "Enter a valid city name"
+            tempElm.innerHTML = "Enter a valid city name."
+            humidElm.innerHTML = " ";
             windElm.innerHTML = "Please check your spelling and try again."
         });
 });
