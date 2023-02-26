@@ -99,14 +99,16 @@ function displayForecast(city) {
 
     .then(function(forecastData) {
         var forecastList = forecastData.list.slice(0,5);
-        console.log(forecastData)
+        
         // Loop through the next 5 days
         for (var i = 0; i < 5; i++) {
             var day = forecastList[i];
 
-             // Get the date of the current day
-            var date = new Date(day.dt * 1000).toLocaleDateString();
-            console.log(date)
+            // Get the date of the current day
+            var date = new Date(day.dt * 1000);
+            date.setDate(date.getDate() + i);
+            date = date.toLocaleDateString();
+            
 
             //Get the temperature, humidity, and wind speed for the current day
             var temperature = day.main.temp;
