@@ -13,10 +13,6 @@ var fiveDayTxt =document.getElementById('fivedayforecasth2')
 
 var savedCities = [];
 
-
-
-
-//calls weather data to main card on click
 searchBtn.addEventListener('click', function(event) {
     var city = searchTextInput.value;
     var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
@@ -62,8 +58,6 @@ searchBtn.addEventListener('click', function(event) {
         });
 });
 
-
-//creates buttons in side bar after search
 function createButtons() {
     
 
@@ -87,7 +81,6 @@ function createButtons() {
     }
 }
 
-//forecast Data
 function displayForecast(city) {
     var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
     fetch(forecastUrl)
