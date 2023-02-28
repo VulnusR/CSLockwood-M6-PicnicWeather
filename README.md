@@ -1,4 +1,4 @@
-# CSLockwood-PicnicWeather
+# PicnicWeather
 
 ### Description
 This repo is for the UCLA fullstack program bootcamp, module 6.<br>
