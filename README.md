@@ -25,7 +25,7 @@ THEN I am again presented with current and future conditions for that city<br>
 
 ### Links
 
-Deployed Application:
+Deployed Application: https://vulnusr.github.io/CSLockwood-M6-PicnicWeather/
 
 
 ### Screenshot
