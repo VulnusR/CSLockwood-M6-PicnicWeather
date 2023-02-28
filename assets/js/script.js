@@ -36,7 +36,7 @@ searchBtn.addEventListener('click', function(event) {
             tempElm.innerHTML = `Temperature: ${temperature}°C`;
             humidElm.innerHTML = `Humidity: ${humidity}%`;
             windElm.innerHTML = `Wind Speed: ${windSpeed}m/s`;
-            headerIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+            headerIcon.src = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
             dateToday.innerHTML = new Date().toLocaleDateString();
             fiveDayTxt.innerHTML = "5 Day Forecast: "
 
@@ -82,7 +82,7 @@ function createButtons() {
 }
 
 function displayForecast(city) {
-    var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+    var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
     fetch(forecastUrl)
         .then(function(response) {
             
@@ -122,7 +122,7 @@ function displayForecast(city) {
                 <p>Temperature: ${temperature}°C</p>
                 <p>Humidity: ${humidity}%</p>
                 <p>Wind Speed: ${windSpeed}m/s</p>
-                <img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png">
+                <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png">
             `;
         }
     })
