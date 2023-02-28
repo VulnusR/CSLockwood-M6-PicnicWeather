@@ -15,7 +15,7 @@ var savedCities = [];
 
 searchBtn.addEventListener('click', function(event) {
     var city = searchTextInput.value;
-    var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
     fetch(url)
         .then(function(response) {
